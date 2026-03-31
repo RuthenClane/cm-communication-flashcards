@@ -1,16 +1,19 @@
 // ════════════════════════════════════════════════
-//  app.js — Logique principale
+//  app.js — Logique principale (avec Persistance)
 // ════════════════════════════════════════════════
 
 // ── State ────
-let allCards    = [...window.allCards];
-let deck        = [];
-let currentIndex = 0;
-let isFlipped   = false;
-let wrongCards  = [];
-let session     = { learned: 0, wrong: 0 };
-let activeModule = 1;          // default module
-let activeMode  = 'learn';     // 'learn' | 'quiz'
+let allCards      = [...window.allCards];
+let deck          = [];
+let currentIndex  = 0;
+let isFlipped     = false;
+let wrongCards    = [];
+let session       = { learned: 0, wrong: 0 };
+let activeModule  = 1;          // default module
+let activeMode    = 'learn';     // 'learn' | 'quiz'
+
+// Persistance
+let masteredCards = {}; // Key: cardId, Value: boolean
 
 // ── DOM Refs ────
 const card           = document.getElementById('card');
@@ -59,14 +62,53 @@ function shuffle(arr) {
 function updateModuleCounts() {
     [1,2,3,4,5,6].forEach(m => {
         const el = document.getElementById(`count-${m}`);
-        if (el) el.textContent = allCards.filter(c => c.module === m).length;
+        if (!el) return;
+        
+        const moduleCards = allCards.filter(c => c.module === m);
+        const masteredInModule = moduleCards.filter(c => masteredCards[c.id]).length;
+        
+        if (masteredInModule === moduleCards.length && moduleCards.length > 0) {
+            el.innerHTML = '<i data-lucide="check" style="width:12px;height:12px;color:var(--success)"></i>';
+            el.style.background = 'rgba(16,185,129,0.2)';
+        } else {
+            el.textContent = `${masteredInModule}/${moduleCards.length}`;
+            el.style.background = '';
+        }
     });
+    lucide.createIcons();
 }
 
 function setActiveModuleBtn(moduleId) {
     document.querySelectorAll('.module-btn').forEach(b => b.classList.remove('active'));
     const btn = document.getElementById(`btn-${moduleId}`);
     if (btn) btn.classList.add('active');
+}
+
+// ── Persistence ────────────────────────────────────────────────
+function saveProgress() {
+    localStorage.setItem('cm_comm_progress', JSON.stringify({
+        mastered: masteredCards,
+        activeModule: activeModule
+    }));
+}
+
+function loadProgress() {
+    const saved = localStorage.getItem('cm_comm_progress');
+    if (saved) {
+        const data = JSON.parse(saved);
+        masteredCards = data.mastered || {};
+        activeModule = data.activeModule || 1;
+    }
+}
+
+function resetAllProgress() {
+    if (confirm("Voulez-vous vraiment réinitialiser toute votre progression ?")) {
+        masteredCards = {};
+        saveProgress();
+        updateModuleCounts();
+        if (activeMode === 'quiz') loadDeck(activeModule);
+        else renderLearn(activeModule);
+    }
 }
 
 // ── Mode Switching ──────────────────────────────────────────────
@@ -143,6 +185,11 @@ function updateCard(animate = false) {
         backAnswer.textContent    = item.answer;
         backDetail.textContent    = item.detail;
         moduleTag.textContent     = item.moduleLabel;
+        
+        // Indicate if already mastered
+        const isMastered = masteredCards[item.id];
+        card.style.borderColor = isMastered ? 'rgba(16,185,129,0.4)' : '';
+        
         isFlipped = false;
         card.classList.remove('flipped');
     };
@@ -171,6 +218,7 @@ function updateProgress() {
 }
 
 function updateStats() {
+    // Session stats
     statLearned.textContent   = session.learned;
     statWrong.textContent     = session.wrong;
     statRemaining.textContent = Math.max(0, deck.length - currentIndex - 1);
@@ -197,8 +245,19 @@ function prevCard() {
 }
 
 function handleMastered(isCorrect) {
-    if (isCorrect) session.learned++;
-    else { session.wrong++; wrongCards.push(deck[currentIndex]); }
+    const cardId = deck[currentIndex].id;
+    
+    if (isCorrect) {
+        session.learned++;
+        masteredCards[cardId] = true;
+    } else {
+        session.wrong++;
+        wrongCards.push(deck[currentIndex]);
+        delete masteredCards[cardId]; // Unmark if failed
+    }
+    
+    saveProgress();
+    updateModuleCounts();
     updateStats();
     nextCard();
 }
@@ -216,11 +275,11 @@ function showEndScreen() {
     resultsBreakdown.innerHTML = `
         <div class="breakdown-item green">
             <span class="breakdown-val">${session.learned}</span>
-            Maîtrisées ✅
+            Réussies ✅
         </div>
         <div class="breakdown-item red">
             <span class="breakdown-val">${session.wrong}</span>
-            À revoir ❌
+            Ratées ❌
         </div>`;
 
     reviewWrongBtn.style.display = wrongCards.length > 0 ? 'flex' : 'none';
@@ -263,6 +322,7 @@ document.querySelectorAll('.module-btn').forEach(btn => {
         activeModule = parseInt(btn.dataset.module);
         setActiveModuleBtn(activeModule);
         sidebar.classList.remove('open');
+        saveProgress();
         if (activeMode === 'learn') renderLearn(activeModule);
         else loadDeck(activeModule);
     });
@@ -304,10 +364,24 @@ document.addEventListener('keydown', (e) => {
 
 // ── Init ────────────────────────────────────────────────────────
 function init() {
+    loadProgress();
     updateModuleCounts();
-    setActiveModuleBtn(1);
-    switchMode('learn');   // Start in learn mode
+    setActiveModuleBtn(activeModule);
+    switchMode('learn');   // Start in learn mode (or could remember previous mode)
     lucide.createIcons();
+    
+    // Add reset button dynamically to sidebar if it doesn't exist
+    if (!document.getElementById('reset-progress-btn')) {
+        const statsZone = document.querySelector('.session-stats');
+        const resetBtn = document.createElement('button');
+        resetBtn.id = 'reset-progress-btn';
+        resetBtn.className = 'btn btn-outline btn-sm btn-full';
+        resetBtn.style.marginTop = '1rem';
+        resetBtn.innerHTML = '<i data-lucide="rotate-ccw" style="width:14px"></i> Réinitialiser';
+        resetBtn.onclick = resetAllProgress;
+        statsZone.appendChild(resetBtn);
+        lucide.createIcons();
+    }
 }
 
 window.addEventListener('DOMContentLoaded', init);

@@ -6,6 +6,7 @@ window.allCards = [
 
     // ─── MODULE 1 — Communication & Émotions ───
     {
+        id: "m1-1",
         module: 1,
         moduleLabel: "Module 1 — Communication & Émotions",
         type: "Définition",
@@ -14,6 +15,7 @@ window.allCards = [
         detail: "Une gestion émotionnelle efficace améliore le climat social, facilite la coopération et réduit les conflits. C'est donc une compétence managériale fondamentale."
     },
     {
+        id: "m1-2",
         module: 1,
         moduleLabel: "Module 1 — Communication & Émotions",
         type: "Concept",
@@ -22,6 +24,7 @@ window.allCards = [
         detail: "La qualité des échanges (clarté, écoute, empathie) façonne directement l'atmosphère de travail, la motivation des équipes et la performance collective."
     },
     {
+        id: "m1-3",
         module: 1,
         moduleLabel: "Module 1 — Communication & Émotions",
         type: "Flash",
@@ -32,6 +35,7 @@ window.allCards = [
 
     // ─── MODULE 2 — Gestion des conflits ───
     {
+        id: "m2-1",
         module: 2,
         moduleLabel: "Module 2 — Gestion des conflits",
         type: "Définition",
@@ -40,6 +44,7 @@ window.allCards = [
         detail: "Un conflit peut émerger entre collègues (interpersonnel), entre services (organisationnel) ou entre salariés et direction (social). Il n'est pas forcément destructeur."
     },
     {
+        id: "m2-2",
         module: 2,
         moduleLabel: "Module 2 — Gestion des conflits",
         type: "Liste",
@@ -48,6 +53,7 @@ window.allCards = [
         detail: "Chaque type appelle une stratégie de résolution différente. Les conflits de valeurs sont souvent les plus difficiles à résoudre."
     },
     {
+        id: "m2-3",
         module: 2,
         moduleLabel: "Module 2 — Gestion des conflits",
         type: "Auteur",
@@ -56,6 +62,7 @@ window.allCards = [
         detail: "Leur modèle (1974) croise deux axes : l'assertivité (défense de ses propres intérêts) et la coopération (prise en compte des intérêts de l'autre)."
     },
     {
+        id: "m2-4",
         module: 2,
         moduleLabel: "Module 2 — Gestion des conflits",
         type: "Modèle",
@@ -64,6 +71,7 @@ window.allCards = [
         detail: "C'est le style le plus efficace sur le long terme : les deux parties trouvent une solution satisfaisante (win-win). Mais il exige du temps et de la confiance."
     },
     {
+        id: "m2-5",
         module: 2,
         moduleLabel: "Module 2 — Gestion des conflits",
         type: "Modèle",
@@ -72,6 +80,7 @@ window.allCards = [
         detail: "La personne se retire ou ignore le conflit. Utile quand le sujet est mineur ou les émotions trop vives, mais problématique si utilisé systématiquement."
     },
     {
+        id: "m2-6",
         module: 2,
         moduleLabel: "Module 2 — Gestion des conflits",
         type: "Modèle",
@@ -80,6 +89,7 @@ window.allCards = [
         detail: "Compétition (haute assert., faible coop.) — Collaboration (haute/haute) — Compromis (moyenne/moyenne) — Évitement (faible/faible) — Accommodement (faible assert., haute coop.)"
     },
     {
+        id: "m2-7",
         module: 2,
         moduleLabel: "Module 2 — Gestion des conflits",
         type: "Flash",
@@ -90,6 +100,7 @@ window.allCards = [
 
     // ─── MODULE 3 — Connaissance de soi / DiSC ───
     {
+        id: "m3-1",
         module: 3,
         moduleLabel: "Module 3 — Connaissance de soi (DiSC)",
         type: "Définition",
@@ -98,6 +109,7 @@ window.allCards = [
         detail: "Le modèle DiSC est un outil de développement personnel qui décrit 4 grands styles comportementaux. Il permet d'adapter sa communication à ses interlocuteurs."
     },
     {
+        id: "m3-2",
         module: 3,
         moduleLabel: "Module 3 — Connaissance de soi (DiSC)",
         type: "Profil DiSC",
@@ -106,6 +118,7 @@ window.allCards = [
         detail: "Le profil D prend des décisions rapidement, aime les défis et peut paraître autoritaire. Pour le convaincre : aller droit au but, se concentrer sur les résultats."
     },
     {
+        id: "m3-3",
         module: 3,
         moduleLabel: "Module 3 — Connaissance de soi (DiSC)",
         type: "Profil DiSC",
@@ -114,6 +127,7 @@ window.allCards = [
         detail: "Le profil I est sociable et émotionnel. Il a besoin de reconnaissance et d'être inclus. Pour l'engager : valoriser l'aspect humain et la dimension collaborative."
     },
     {
+        id: "m3-4",
         module: 3,
         moduleLabel: "Module 3 — Connaissance de soi (DiSC)",
         type: "Profil DiSC",
@@ -122,6 +136,7 @@ window.allCards = [
         detail: "Le profil S préfère la stabilité et l'harmonie. Il résiste au changement brusque. Pour le rassurer : prendre le temps d'expliquer, donner de la constance."
     },
     {
+        id: "m3-5",
         module: 3,
         moduleLabel: "Module 3 — Connaissance de soi (DiSC)",
         type: "Profil DiSC",
@@ -130,6 +145,7 @@ window.allCards = [
         detail: "Le profil C a besoin de données et de procédures claires. Il craint l'erreur. Pour le convaincre : fournir des chiffres, être rigoureux et logique."
     },
     {
+        id: "m3-6",
         module: 3,
         moduleLabel: "Module 3 — Connaissance de soi (DiSC)",
         type: "Application",
@@ -140,6 +156,7 @@ window.allCards = [
 
     // ─── MODULE 4 — Outils de communication & médiation ───
     {
+        id: "m4-1",
         module: 4,
         moduleLabel: "Module 4 — Outils de communication",
         type: "Auteur",
@@ -148,6 +165,7 @@ window.allCards = [
         detail: "Psychologue américain, Rosenberg développe la CNV dans les années 1960. Son objectif : créer des relations basées sur l'empathie et la coopération plutôt que sur le jugement."
     },
     {
+        id: "m4-2",
         module: 4,
         moduleLabel: "Module 4 — Outils de communication",
         type: "Méthode",
@@ -156,6 +174,7 @@ window.allCards = [
         detail: "1. Observer les faits sans juger. 2. Exprimer ce que l'on ressent. 3. Identifier le besoin sous-jacent. 4. Formuler une demande concrète et réalisable."
     },
     {
+        id: "m4-3",
         module: 4,
         moduleLabel: "Module 4 — Outils de communication",
         type: "Application CNV",
@@ -164,6 +183,7 @@ window.allCards = [
         detail: "Exemple : « Lors de notre réunion de lundi, tu as répondu à 3 messages pendant que je parlais. » (vs « Tu ne m'écoutes jamais. »)"
     },
     {
+        id: "m4-4",
         module: 4,
         moduleLabel: "Module 4 — Outils de communication",
         type: "Application CNV",
@@ -172,6 +192,7 @@ window.allCards = [
         detail: "La demande est différente de l'exigence : elle laisse à l'autre le choix de dire non. Exemple : « Pourrais-tu poser ton téléphone pendant nos réunions ? »"
     },
     {
+        id: "m4-5",
         module: 4,
         moduleLabel: "Module 4 — Outils de communication",
         type: "Auteur",
@@ -180,6 +201,7 @@ window.allCards = [
         detail: "Ancienne manager chez Google et Apple, Kim Scott publie 'Radical Candor' en 2017. Elle y décrit comment donner un feedback sincère tout en se souciant genuinement de l'autre."
     },
     {
+        id: "m4-6",
         module: 4,
         moduleLabel: "Module 4 — Outils de communication",
         type: "Concept",
@@ -188,6 +210,7 @@ window.allCards = [
         detail: "Le Radical Candor se situe en haut à droite de la matrice. Sans caring : Obnoxious Aggression. Sans challenging : Ruinous Empathy. Sans les deux : Manipulative Insincerity."
     },
     {
+        id: "m4-7",
         module: 4,
         moduleLabel: "Module 4 — Outils de communication",
         type: "Concept",
@@ -196,6 +219,7 @@ window.allCards = [
         detail: "On veut ménager les sentiments de l'autre, donc on ne dit jamais la vérité. Résultat : les problèmes s'accumulent et la personne ne peut pas progresser."
     },
     {
+        id: "m4-8",
         module: 4,
         moduleLabel: "Module 4 — Outils de communication",
         type: "Auteur",
@@ -204,6 +228,7 @@ window.allCards = [
         detail: "Le Triangle de Karpman (1968) décrit les jeux psychologiques toxiques dans les relations. Il fait partie de l'Analyse Transactionnelle développée par Eric Berne."
     },
     {
+        id: "m4-9",
         module: 4,
         moduleLabel: "Module 4 — Outils de communication",
         type: "Liste",
@@ -212,6 +237,7 @@ window.allCards = [
         detail: "Ces rôles sont interchangeables : une même personne peut passer de Victime à Persécuteur dans la même conversation. Le piège est de rester enfermé dans ce triangle."
     },
     {
+        id: "m4-10",
         module: 4,
         moduleLabel: "Module 4 — Outils de communication",
         type: "Concept",
@@ -220,6 +246,7 @@ window.allCards = [
         detail: "Refuser d'endosser l'un des 3 rôles. Communiquer de façon directe et empathique. La CNV et le Radical Candor sont des outils efficaces pour en sortir."
     },
     {
+        id: "m4-11",
         module: 4,
         moduleLabel: "Module 4 — Outils de communication",
         type: "Flash",
@@ -230,6 +257,7 @@ window.allCards = [
 
     // ─── MODULE 5 — Accompagnement au changement ───
     {
+        id: "m5-1",
         module: 5,
         moduleLabel: "Module 5 — Accompagnement au changement",
         type: "Liste",
@@ -238,6 +266,7 @@ window.allCards = [
         detail: "Les Alliés (forte synergie) soutiennent activement. Les Passifs sont neutres. Les Hésitants sont indécis. Les Opposants résistent activement (fort antagonisme)."
     },
     {
+        id: "m5-2",
         module: 5,
         moduleLabel: "Module 5 — Accompagnement au changement",
         type: "Concept",
@@ -246,6 +275,7 @@ window.allCards = [
         detail: "En mobilisant d'abord les alliés, on crée une masse critique favorable au changement, ce qui facilite la conversion progressive des hésitants et isole les opposants."
     },
     {
+        id: "m5-3",
         module: 5,
         moduleLabel: "Module 5 — Accompagnement au changement",
         type: "Application",
@@ -254,6 +284,7 @@ window.allCards = [
         detail: "Les hésitants ne sont pas opposés au changement, ils manquent d'informations ou de sécurité. Ils peuvent devenir des alliés si on les accompagne correctement."
     },
     {
+        id: "m5-4",
         module: 5,
         moduleLabel: "Module 5 — Accompagnement au changement",
         type: "Flash",
@@ -264,6 +295,7 @@ window.allCards = [
 
     // ─── MODULE 6 — Prévention des RPS ───
     {
+        id: "m6-1",
         module: 6,
         moduleLabel: "Module 6 — Prévention des RPS",
         type: "Définition",
@@ -272,6 +304,7 @@ window.allCards = [
         detail: "Les RPS désignent les risques professionnels liés à l'organisation du travail, aux relations interpersonnelles et à l'environnement de travail : stress, burn-out, harcèlement, violences, etc."
     },
     {
+        id: "m6-2",
         module: 6,
         moduleLabel: "Module 6 — Prévention des RPS",
         type: "Liste",
@@ -280,6 +313,7 @@ window.allCards = [
         detail: "Primaire : agir sur la source (organisation du travail). Secondaire : aider les individus exposés (formations, soutien). Tertiaire : soutenir en cas de crise (cellule psychologique, accompagnement)."
     },
     {
+        id: "m6-3",
         module: 6,
         moduleLabel: "Module 6 — Prévention des RPS",
         type: "Concept",
@@ -288,6 +322,7 @@ window.allCards = [
         detail: "La prévention primaire supprime ou réduit le risque à la source (ex : réorganiser le travail). La tertiaire intervient après que le dommage est survenu (ex : soutien psychologique post-crise)."
     },
     {
+        id: "m6-4",
         module: 6,
         moduleLabel: "Module 6 — Prévention des RPS",
         type: "Méthode",
@@ -296,6 +331,7 @@ window.allCards = [
         detail: "Cette démarche structurée permet à l'entreprise d'identifier ses facteurs de risque, de les hiérarchiser et de mettre en place des actions correctives mesurables."
     },
     {
+        id: "m6-5",
         module: 6,
         moduleLabel: "Module 6 — Prévention des RPS",
         type: "Définition",
@@ -304,6 +340,7 @@ window.allCards = [
         detail: "Le DUERP est obligatoire pour toutes les entreprises dès 1 salarié (Code du travail, art. R.4121-1). Il répertorie l'ensemble des risques professionnels, y compris les RPS."
     },
     {
+        id: "m6-6",
         module: 6,
         moduleLabel: "Module 6 — Prévention des RPS",
         type: "Flash",
@@ -312,6 +349,7 @@ window.allCards = [
         detail: "Depuis 2002, le DUERP doit recenser tous les risques professionnels. Les RPS en font partie. L'absence du DUERP expose l'employeur à des sanctions pénales."
     },
     {
+        id: "m6-7",
         module: 6,
         moduleLabel: "Module 6 — Prévention des RPS",
         type: "Auteur",
