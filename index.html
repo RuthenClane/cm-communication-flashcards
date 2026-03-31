@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CM Communication | Apprentissage & Révision</title>
+    <meta name="description" content="Fiches de révision interactives pour le cours de Communication et Médiation Sociale — GRH">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app">
+
+        <!-- ══ SIDEBAR ══ -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <span class="sidebar-brand">
+                    <i data-lucide="brain"></i>
+                    CM Comm.
+                </span>
+                <button class="sidebar-close" id="sidebar-close"><i data-lucide="x"></i></button>
+            </div>
+
+            <!-- Mode Toggle -->
+            <div class="mode-toggle-wrap">
+                <div class="mode-toggle" id="mode-toggle">
+                    <button class="mode-btn active" data-mode="learn" id="mode-learn">
+                        <i data-lucide="book-open"></i> Apprendre
+                    </button>
+                    <button class="mode-btn" data-mode="quiz" id="mode-quiz">
+                        <i data-lucide="layers"></i> Réviser
+                    </button>
+                </div>
+            </div>
+
+            <nav class="module-nav">
+                <p class="nav-label">Modules</p>
+                <button class="module-btn active" data-module="1" id="btn-1">
+                    <i data-lucide="heart"></i> 1 — Émotions
+                    <span class="module-count" id="count-1"></span>
+                </button>
+                <button class="module-btn" data-module="2" id="btn-2">
+                    <i data-lucide="zap"></i> 2 — Conflits
+                    <span class="module-count" id="count-2"></span>
+                </button>
+                <button class="module-btn" data-module="3" id="btn-3">
+                    <i data-lucide="user"></i> 3 — DiSC
+                    <span class="module-count" id="count-3"></span>
+                </button>
+                <button class="module-btn" data-module="4" id="btn-4">
+                    <i data-lucide="message-circle"></i> 4 — Outils
+                    <span class="module-count" id="count-4"></span>
+                </button>
+                <button class="module-btn" data-module="5" id="btn-5">
+                    <i data-lucide="trending-up"></i> 5 — Changement
+                    <span class="module-count" id="count-5"></span>
+                </button>
+                <button class="module-btn" data-module="6" id="btn-6">
+                    <i data-lucide="shield"></i> 6 — RPS
+                    <span class="module-count" id="count-6"></span>
+                </button>
+            </nav>
+
+            <!-- Stats (quiz mode only) -->
+            <div class="session-stats" id="session-stats">
+                <p class="nav-label">Session</p>
+                <div class="stat-row"><span>✅ Maîtrisées</span><strong id="stat-learned">0</strong></div>
+                <div class="stat-row"><span>❌ À revoir</span><strong id="stat-wrong">0</strong></div>
+                <div class="stat-row"><span>⏳ Restantes</span><strong id="stat-remaining">0</strong></div>
+            </div>
+        </aside>
+
+        <!-- ══ MAIN ══ -->
+        <main class="main">
+            <header class="top-bar">
+                <button class="menu-btn" id="menu-btn"><i data-lucide="menu"></i></button>
+                <div class="top-bar-title">
+                    <h1 id="page-title">Apprentissage</h1>
+                    <p class="subtitle" id="module-label">Communication & Médiation Sociale</p>
+                </div>
+                <button class="btn btn-outline btn-sm" id="shuffle-btn" style="display:none;">
+                    <i data-lucide="shuffle"></i> Mélanger
+                </button>
+            </header>
+
+            <!-- ══ LEARN VIEW ══ -->
+            <div id="learn-view">
+                <!-- Content injected by JS -->
+            </div>
+
+            <!-- ══ QUIZ VIEW ══ -->
+            <div id="quiz-view" style="display:none;">
+                <!-- Progress Bar -->
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span id="progress-text">Carte 1 sur 1</span>
+                        <span id="progress-pct">0%</span>
+                    </div>
+                </div>
+
+                <!-- Flashcard Zone -->
+                <div class="card-zone" id="game-view">
+                    <div class="module-tag" id="module-tag">Module 1</div>
+
+                    <div class="card-container" id="card-container">
+                        <div class="card" id="card">
+                            <div class="card-face card-front">
+                                <i data-lucide="help-circle" class="card-icon"></i>
+                                <p class="card-type-label" id="front-type">Définition</p>
+                                <p class="card-question" id="front-question">Question</p>
+                                <p class="flip-hint">Cliquer pour révéler la réponse</p>
+                            </div>
+                            <div class="card-face card-back">
+                                <i data-lucide="check-circle" class="card-icon" style="color: var(--success);"></i>
+                                <p class="card-answer" id="back-answer">Réponse</p>
+                                <p class="card-detail" id="back-detail">Détail</p>
+                                <div class="card-actions">
+                                    <button class="btn-mastery btn-wrong" id="wrong-btn" title="À revoir">
+                                        <i data-lucide="x"></i>
+                                    </button>
+                                    <button class="btn-mastery btn-correct" id="correct-btn" title="Maîtrisé !">
+                                        <i data-lucide="check"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="controls">
+                        <button class="btn btn-outline" id="prev-btn">
+                            <i data-lucide="chevron-left"></i> Précédent
+                        </button>
+                        <button class="btn btn-primary" id="flip-btn">
+                            <i data-lucide="rotate-cw"></i> Retourner
+                        </button>
+                        <button class="btn btn-outline" id="next-btn">
+                            Suivant <i data-lucide="chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- End Screen -->
+                <div class="end-screen" id="end-screen">
+                    <div class="results-card">
+                        <i data-lucide="trophy" class="trophy-icon"></i>
+                        <h2>Session terminée !</h2>
+                        <div class="score" id="final-score">—</div>
+                        <p class="score-sub" id="score-sub"></p>
+                        <div class="results-breakdown" id="results-breakdown"></div>
+                        <button class="btn btn-primary btn-full" id="restart-btn">
+                            <i data-lucide="refresh-cw"></i> Recommencer
+                        </button>
+                        <button class="btn btn-outline btn-full" id="review-wrong-btn">
+                            <i data-lucide="repeat"></i> Revoir les ratées
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="cards.js"></script>
+    <script src="learn.js"></script>
+    <script src="app.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
