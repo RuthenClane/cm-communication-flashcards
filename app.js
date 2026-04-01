@@ -212,7 +212,10 @@ function updateCard(animate = false) {
             doUpdate();
             card.style.opacity = '1';
             card.style.transform = 'scale(1)';
-            setTimeout(() => { card.style.transition = ''; }, 200);
+            setTimeout(() => { 
+                card.style.transition = ''; 
+                card.style.transform = ''; // IMPORTANT: Clear inline transform so CSS classes can work again
+            }, 200);
         }, 150);
     } else {
         doUpdate();
