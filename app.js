@@ -1,16 +1,18 @@
 // ════════════════════════════════════════════════
-//  app.js — Logique principale (avec Persistance)
+//  app.js — Logique principale (Apprentissage, Révision, Scénario)
 // ════════════════════════════════════════════════
 
 // ── State ────
-let allCards      = [...window.allCards];
-let deck          = [];
-let currentIndex  = 0;
-let isFlipped     = false;
-let wrongCards    = [];
-let session       = { learned: 0, wrong: 0 };
-let activeModule  = 1;          // default module
-let activeMode    = 'learn';     // 'learn' | 'quiz'
+let allCards        = [...window.allCards];
+let allScenarios    = [...window.allScenarios];
+let deck            = [];
+let currentIndex    = 0;
+let scenarioIndex   = 0;
+let isFlipped       = false;
+let wrongCards      = [];
+let session         = { learned: 0, wrong: 0 };
+let activeModule    = 1;          // default module
+let activeMode      = 'learn';     // 'learn' | 'quiz' | 'scenario'
 
 // Persistance
 let masteredCards = {}; // Key: cardId, Value: boolean
@@ -47,6 +49,8 @@ const menuBtn        = document.getElementById('menu-btn');
 const sidebarClose   = document.getElementById('sidebar-close');
 const learnView      = document.getElementById('learn-view');
 const quizView       = document.getElementById('quiz-view');
+const scenarioView   = document.getElementById('scenario-view');
+const scenarioContent = document.getElementById('scenario-content');
 const pageTitle      = document.getElementById('page-title');
 const sessionStats   = document.getElementById('session-stats');
 const modeBtns       = document.querySelectorAll('.mode-btn');
@@ -107,7 +111,7 @@ function resetAllProgress() {
         saveProgress();
         updateModuleCounts();
         if (activeMode === 'quiz') loadDeck(activeModule);
-        else renderLearn(activeModule);
+        else if (activeMode === 'learn') renderLearn(activeModule);
     }
 }
 
@@ -116,20 +120,28 @@ function switchMode(mode) {
     activeMode = mode;
     modeBtns.forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
 
+    // Hide all
+    learnView.style.display    = 'none';
+    quizView.style.display     = 'none';
+    scenarioView.style.display = 'none';
+    shuffleBtn.style.display   = 'none';
+    sessionStats.style.display = 'none';
+
     if (mode === 'learn') {
         learnView.style.display = 'block';
-        quizView.style.display = 'none';
-        shuffleBtn.style.display = 'none';
-        sessionStats.style.display = 'none';
         pageTitle.textContent = 'Apprentissage';
         renderLearn(activeModule);
-    } else {
-        learnView.style.display = 'none';
+    } else if (mode === 'quiz') {
         quizView.style.display = 'block';
         shuffleBtn.style.display = '';
         sessionStats.style.display = 'block';
         pageTitle.textContent = 'Révision';
         loadDeck(activeModule);
+    } else if (mode === 'scenario') {
+        scenarioView.style.display = 'block';
+        pageTitle.textContent = 'Mise en situation';
+        moduleLabel.textContent = 'Études de cas réelles';
+        renderScenario(scenarioIndex);
     }
 }
 
@@ -150,8 +162,6 @@ function renderLearn(moduleId) {
     if (goQuizBtn) {
         goQuizBtn.addEventListener('click', () => {
             switchMode('quiz');
-            // Toggle mode buttons
-            modeBtns.forEach(b => b.classList.toggle('active', b.dataset.mode === 'quiz'));
         });
     }
 }
@@ -218,7 +228,6 @@ function updateProgress() {
 }
 
 function updateStats() {
-    // Session stats
     statLearned.textContent   = session.learned;
     statWrong.textContent     = session.wrong;
     statRemaining.textContent = Math.max(0, deck.length - currentIndex - 1);
@@ -310,11 +319,83 @@ function reviewWrongOnly() {
     endScreen.classList.remove('visible');
 }
 
+// ── Scenario View Logic ──────────────────────────────────────────
+function renderScenario(idx) {
+    const s = allScenarios[idx];
+    if (!s) return;
+
+    let solutionHTML = '';
+    if (s.id === "s-1") {
+        solutionHTML = `
+            <div class="correction-step"><strong>O :</strong> ${s.expertSolution.o}</div>
+            <div class="correction-step"><strong>S :</strong> ${s.expertSolution.s}</div>
+            <div class="correction-step"><strong>B :</strong> ${s.expertSolution.b}</div>
+            <div class="correction-step"><strong>D :</strong> ${s.expertSolution.d}</div>
+        `;
+    } else {
+        solutionHTML = `
+            <div class="correction-step"><strong>Analyse :</strong> ${s.expertSolution.analysis}</div>
+            <div class="correction-step"><strong>Action :</strong> ${s.expertSolution.strategy || s.expertSolution.reformulation || s.expertSolution.exit}</div>
+        `;
+    }
+
+    scenarioContent.innerHTML = `
+        <div class="scenario-card">
+            <div class="scenario-header">
+                <span class="scenario-title">${s.title}</span>
+                <span class="scenario-badge">${s.tool}</span>
+            </div>
+            <div class="scenario-body">
+                <div class="scenario-context">${s.context}</div>
+                <div class="scenario-challenge">${s.challenge}</div>
+                ${s.hint ? `<div class="scenario-hint"><i data-lucide="help-circle"></i> <span>Aide : ${s.hint}</span></div>` : ''}
+            </div>
+
+            <div class="scenario-input-area">
+                <textarea class="scenario-textarea" placeholder="Rédigez votre réponse ici..."></textarea>
+                <button class="btn btn-primary" id="check-scenario-btn">
+                    <i data-lucide="eye"></i> Voir la solution experte
+                </button>
+            </div>
+
+            <div class="scenario-correction" id="scenario-correction">
+                <div class="correction-title"><i data-lucide="award"></i> Solution de l'expert</div>
+                <div class="correction-grid">${solutionHTML}</div>
+            </div>
+
+            <div class="scenario-nav">
+                <button class="btn btn-outline btn-sm" id="prev-scenario" ${idx === 0 ? 'disabled' : ''}>
+                    <i data-lucide="arrow-left"></i> Précédent
+                </button>
+                <span class="scenario-progress">Situation ${idx+1} / ${allScenarios.length}</span>
+                <button class="btn btn-outline btn-sm" id="next-scenario" ${idx === allScenarios.length - 1 ? 'disabled' : ''}>
+                    Suivant <i data-lucide="arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    `;
+
+    lucide.createIcons();
+
+    // Event listeners for scenario elements
+    document.getElementById('check-scenario-btn').addEventListener('click', () => {
+        document.getElementById('scenario-correction').style.display = 'block';
+        document.getElementById('scenario-correction').scrollIntoView({ behavior: 'smooth', block: 'end' });
+    });
+
+    document.getElementById('prev-scenario').onclick = () => {
+        if (scenarioIndex > 0) { scenarioIndex--; renderScenario(scenarioIndex); }
+    };
+    document.getElementById('next-scenario').onclick = () => {
+        if (scenarioIndex < allScenarios.length - 1) { scenarioIndex++; renderScenario(scenarioIndex); }
+    };
+}
+
 // ── Event Listeners ─────────────────────────────────────────────
 
-// Mode toggle
 document.getElementById('mode-learn').addEventListener('click', () => switchMode('learn'));
 document.getElementById('mode-quiz').addEventListener('click',  () => switchMode('quiz'));
+document.getElementById('mode-scenario').addEventListener('click', () => switchMode('scenario'));
 
 // Module buttons
 document.querySelectorAll('.module-btn').forEach(btn => {
@@ -324,11 +405,14 @@ document.querySelectorAll('.module-btn').forEach(btn => {
         sidebar.classList.remove('open');
         saveProgress();
         if (activeMode === 'learn') renderLearn(activeModule);
-        else loadDeck(activeModule);
+        else if (activeMode === 'quiz') loadDeck(activeModule);
+        // Scenario mode stays on scenario view, but the user is in the sidebar so maybe switch to learn?
+        // Let's switch back to learn if they pick a module since scenarios are cross-module
+        else { switchMode('learn'); }
     });
 });
 
-// Card flip
+// Card interaction
 cardContainer.addEventListener('click', (e) => {
     if (e.target.closest('.btn-mastery')) return;
     isFlipped = !isFlipped;
@@ -354,12 +438,13 @@ sidebarClose.addEventListener('click', () => sidebar.classList.remove('open'));
 
 // Keyboard
 document.addEventListener('keydown', (e) => {
-    if (activeMode !== 'quiz') return;
-    if (e.key === 'ArrowRight' || e.key === 'l') nextCard();
-    if (e.key === 'ArrowLeft'  || e.key === 'h') prevCard();
-    if (e.key === ' ') { e.preventDefault(); isFlipped = !isFlipped; card.classList.toggle('flipped'); }
-    if (e.key === 'ArrowUp'   || e.key === 'k') handleMastered(true);
-    if (e.key === 'ArrowDown' || e.key === 'j') handleMastered(false);
+    if (activeMode === 'quiz') {
+        if (e.key === 'ArrowRight' || e.key === 'l') nextCard();
+        if (e.key === 'ArrowLeft'  || e.key === 'h') prevCard();
+        if (e.key === ' ') { e.preventDefault(); isFlipped = !isFlipped; card.classList.toggle('flipped'); }
+        if (e.key === 'ArrowUp'   || e.key === 'k') handleMastered(true);
+        if (e.key === 'ArrowDown' || e.key === 'j') handleMastered(false);
+    }
 });
 
 // ── Init ────────────────────────────────────────────────────────
@@ -367,10 +452,9 @@ function init() {
     loadProgress();
     updateModuleCounts();
     setActiveModuleBtn(activeModule);
-    switchMode('learn');   // Start in learn mode (or could remember previous mode)
+    switchMode('learn');   
     lucide.createIcons();
     
-    // Add reset button dynamically to sidebar if it doesn't exist
     if (!document.getElementById('reset-progress-btn')) {
         const statsZone = document.querySelector('.session-stats');
         const resetBtn = document.createElement('button');
