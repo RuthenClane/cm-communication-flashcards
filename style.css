@@ -443,6 +443,29 @@ blockquote { font-style: italic; font-size: 1rem; line-height: 1.5; color: var(-
 .learn-tip i { width: 16px; height: 16px; color: var(--warning); flex-shrink: 0; margin-top: 1px; }
 .learn-tip strong { color: var(--text); }
 
+/* ── Images ── */
+.learn-image-wrap {
+    width: 100%;
+    margin: 1.5rem 0;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff; /* Fond blanc pour les schémas souvent sur fond blanc */
+    display: flex;
+    justify-content: center;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.learn-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+.learn-image-wrap:hover .learn-img {
+    transform: scale(1.02);
+}
+
 /* ── Learn Table ── */
 .learn-table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border); }
 .learn-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }

@@ -85,8 +85,8 @@ window.allCards = [
         moduleLabel: "Module 2 — Gestion des conflits",
         type: "Modèle",
         question: "Quels sont les 5 styles de Thomas & Kilmann ?",
-        answer: "Compétition, Collaboration, Compromis, Évitement, Accommodement",
-        detail: "Compétition (haute assert., faible coop.) — Collaboration (haute/haute) — Compromis (moyenne/moyenne) — Évitement (faible/faible) — Accommodement (faible assert., haute coop.)"
+        answer: "Compétition, Collaboration, Compromis, Évitement, Acceptation",
+        detail: "Compétition (haute assert., faible coop.) — Collaboration (haute/haute) — Compromis (moyenne/moyenne) — Évitement (faible/faible) — Acceptation (faible assert., haute coop.)"
     },
     {
         id: "m2-7",
@@ -356,5 +356,97 @@ window.allCards = [
         question: "Quelles sont les deux références institutionnelles citées dans le cours pour la prévention des RPS ?",
         answer: "INRS (guide ED6140) et AMELI (guide T7)",
         detail: "L'INRS (Institut National de Recherche et Sécurité) et l'Assurance Maladie (AMELI) publient des guides méthodologiques pour aider les entreprises à prévenir les RPS."
+    },
+
+    // ─── AJOUTS MODULE 2 — Glasl & Thomas-Kilmann ───
+    {
+        id: "m2-8",
+        module: 2,
+        moduleLabel: "Module 2 — Conflits",
+        type: "Auteur",
+        question: "Qui est l'auteur du modèle de l'escalade du conflit en 9 étapes ?",
+        answer: "Friedrich Glasl",
+        detail: "Glasl est un économiste et consultant autrichien. Son modèle est mondialement utilisé pour comprendre comment un conflit s'auto-alimente et devient destructeur."
+    },
+    {
+        id: "m2-9",
+        module: 2,
+        moduleLabel: "Module 2 — Conflits",
+        type: "Glasl",
+        question: "Quelles sont les 3 grandes phases de l'escalade de Glasl ?",
+        answer: "1. Gagnant-Gagnant (Win-Win)  2. Gagnant-Perdant (Win-Lose)  3. Perdant-Perdant (Lose-Lose)",
+        detail: "Phase 1 : résolution possible par le dialogue. Phase 2 : la relation se dégrade, un tiers est nécessaire. Phase 3 : destruction mutuelle, intervention autoritaire obligatoire."
+    },
+    {
+        id: "m2-10",
+        module: 2,
+        moduleLabel: "Module 2 — Conflits",
+        type: "Glasl",
+        question: "À quelle phase de Glasl correspond l'étape 'Dénigrement' ?",
+        answer: "Phase 2 (Gagnant-Perdant)",
+        detail: "À ce stade, on ne cherche plus à résoudre le problème, mais à humilier l'autre publiquement. Le conflit devient personnel et émotionnel."
+    },
+    {
+        id: "m2-11",
+        module: 2,
+        moduleLabel: "Module 2 — Conflits",
+        type: "Glasl",
+        question: "Quelle est l'ultime étape (n°9) du modèle de Glasl ?",
+        answer: "Annéantissement",
+        detail: "C'est le stade de l'autodestruction : on accepte de se perdre soi-même pourvu que l'adversaire soit anéanti. Phase Perdant-Perdant absolue."
+    },
+    {
+        id: "m2-12",
+        module: 2,
+        moduleLabel: "Module 2 — Conflits",
+        type: "Glasl",
+        question: "À partir de quel niveau de Glasl l'intervention d'un médiateur est-elle indispensable ?",
+        answer: "Niveau 2 (Gagnant-Perdant)",
+        detail: "Au niveau 1, les parties peuvent s'en sortir seules. Au niveau 2, la méfiance est trop forte. Au niveau 3, une médiation ne suffit plus, il faut souvent un arbitrage ou un juge."
+    },
+    {
+        id: "m2-13",
+        module: 2,
+        moduleLabel: "Module 2 — Conflits",
+        type: "Thomas-Kilmann",
+        question: "Quel style privilégier pour une décision vitale et urgente ?",
+        answer: "La Compétition",
+        detail: "Bien que peu coopératif, ce style est nécessaire quand une action rapide et tranchée est indispensable (ex: urgence vitale, crise majeure)."
+    },
+    {
+        id: "m2-14",
+        module: 2,
+        moduleLabel: "Module 2 — Conflits",
+        type: "Thomas-Kilmann",
+        question: "Explique la différence entre Compromis et Collaboration.",
+        answer: "Collaboration = Win-Win (100% satisfait). Compromis = Entente moyenne (50/50).",
+        detail: "Le compromis est un partage : chacun lâche un peu. La collaboration cherche une solution créative ou nouvelle qui satisfait pleinement les deux parties."
+    },
+    {
+        id: "m2-15",
+        module: 2,
+        moduleLabel: "Module 2 — Conflits",
+        type: "Thomas-Kilmann",
+        question: "Quel style Thomas-Kilmann privilégier pour redonner de la confiance ?",
+        answer: "L'Acceptation",
+        detail: "En cédant sur un point moins important pour vous mais majeur pour l'autre, vous montrez votre bonne volonté et préservez la relation future."
+    },
+    {
+        id: "m2-16",
+        module: 2,
+        moduleLabel: "Module 2 — Conflits",
+        type: "Cas Pratique",
+        question: "Deux collègues se disputent sur le choix de la couleur d'un logo. Quel style T&K ?",
+        answer: "L'Évitement ou l'Acceptation.",
+        detail: "Si l'enjeu est mineur, inutile de gaspiller de l'énergie. L'évitement (attendre) ou l'acceptation (céder sur le détail) sont plus productifs ici."
+    },
+    {
+        id: "m2-17",
+        module: 2,
+        moduleLabel: "Module 2 — Conflits",
+        type: "Glasl",
+        question: "Que signifie 'Alliances et images négatives' chez Glasl ?",
+        answer: "On cherche des alliés pour discréditer l'autre.",
+        detail: "C'est l'étape 4 (début du niveau 2). Le conflit s'étend au groupe. On ne voit plus l'autre comme un collègue mais comme un ennemi."
     }
 ];

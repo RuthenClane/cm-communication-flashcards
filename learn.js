@@ -96,43 +96,52 @@ window.learnModules = {
                 </div>`
             },
             {
-                title: "Modèle Thomas & Kilmann — Les 5 styles",
+                title: "Modèle Thomas & Kilmann",
                 icon: "grid",
                 content: `
-                <p style="color:var(--text-subtle); margin-bottom:1rem; font-size:0.9rem;">Le modèle croise <strong>assertivité</strong> (défense de ses propres intérêts) et <strong>coopération</strong> (prise en compte des intérêts de l'autre).</p>
-                <div class="learn-table-wrap">
+                <p style="color:var(--text-subtle); margin-bottom:1rem; font-size:0.9rem;">Le modèle croise <strong>assertivité</strong> (satisfaction de ses propres besoins) et <strong>coopération</strong> (satisfaction des besoins de l'autre).</p>
+                <div class="learn-image-wrap">
+                    <img src="./thomas-kilmann.png" alt="Matrice Thomas-Kilman" class="learn-img">
+                </div>
+                <div class="learn-table-wrap" style="margin-top:1.5rem;">
                     <table class="learn-table">
                         <thead>
-                            <tr><th>Style</th><th>Assertivité</th><th>Coopération</th><th>Usage idéal</th></tr>
+                            <tr><th>Style</th><th>Assertivité</th><th>Coopération</th><th>Objectif</th></tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><span class="tag tag-red">Compétition</span></td>
-                                <td>🔴 Haute</td><td>⬇️ Faible</td>
-                                <td>Urgence, décision rapide nécessaire</td>
-                            </tr>
-                            <tr>
-                                <td><span class="tag tag-green">Collaboration</span></td>
-                                <td>🟢 Haute</td><td>🟢 Haute</td>
-                                <td>Problème complexe, solution win-win souhaitée</td>
-                            </tr>
-                            <tr>
-                                <td><span class="tag tag-yellow">Compromis</span></td>
-                                <td>🟡 Moyenne</td><td>🟡 Moyenne</td>
-                                <td>Contrainte de temps, équilibre acceptable</td>
-                            </tr>
-                            <tr>
-                                <td><span class="tag tag-gray">Évitement</span></td>
-                                <td>⬇️ Faible</td><td>⬇️ Faible</td>
-                                <td>Enjeu mineur, attendre le bon moment</td>
-                            </tr>
-                            <tr>
-                                <td><span class="tag tag-blue">Accommodement</span></td>
-                                <td>⬇️ Faible</td><td>🔵 Haute</td>
-                                <td>Préserver la relation, concéder sur un point</td>
-                            </tr>
+                            <tr><td><span class="tag tag-red">Compétition</span></td><td>🔴 Haute</td><td>⬇️ Faible</td><td>Gagner (Assertif)</td></tr>
+                            <tr><td><span class="tag tag-green">Collaboration</span></td><td>🟢 Haute</td><td>🟢 Haute</td><td>Résoudre (Win-Win)</td></tr>
+                            <tr><td><span class="tag tag-yellow">Compromis</span></td><td>🟡 Moyenne</td><td>🟡 Moyenne</td><td>Partager (Entente mutuelle)</td></tr>
+                            <tr><td><span class="tag tag-gray">Évitement</span></td><td>⬇️ Faible</td><td>⬇️ Faible</td><td>Différer (Retrait)</td></tr>
+                            <tr><td><span class="tag tag-blue">Acceptation</span></td><td>⬇️ Faible</td><td>🔵 Haute</td><td>Céder (Maintenir la relation)</td></tr>
                         </tbody>
                     </table>
+                </div>`
+            },
+            {
+                title: "L'escalade du conflit (Friedrich Glasl)",
+                icon: "trending-down",
+                content: `
+                <div class="learn-definition">
+                    <div class="ld-label">Le Modèle de Glasl</div>
+                    <p>Friedrich Glasl décrit le conflit comme une <strong>descente en 9 étapes</strong> (l'escalier vers l'abîme). Plus le conflit s'intensifie, plus la raison laisse place aux émotions, puis à la destruction pure.</p>
+                </div>
+                <div class="learn-image-wrap" style="margin-top:1rem;">
+                    <img src="./glasl-escalation.png" alt="Modèle Glasl escalade" class="learn-img">
+                </div>
+                <div class="prevention-levels" style="margin-top:1.5rem;">
+                    <div class="pl-level" style="background:rgba(16,185,129,0.1); border-left:4px solid #10b981;">
+                        <div class="pl-badge" style="background:#10b981;">Niveau 1 : GAGNANT-GAGNANT</div>
+                        <p>Étapes 1-3. Tensions, Débat et Passage à l'action. La résolution est encore possible par la médiation ou le dialogue.</p>
+                    </div>
+                    <div class="pl-level" style="background:rgba(245,158,11,0.1); border-left:4px solid #f59e0b;">
+                        <div class="pl-badge" style="background:#f59e0b;">Niveau 2 : GAGNANT-PERDANT</div>
+                        <p>Étapes 4-6. Alliances, Dénigrement et Menaces. On veut gagner et que l'autre perde. La relation se brise.</p>
+                    </div>
+                    <div class="pl-level" style="background:rgba(244,63,94,0.1); border-left:4px solid #f43f5e;">
+                        <div class="pl-badge" style="background:#f43f5e;">Niveau 3 : PERDANT-PERDANT</div>
+                        <p>Étapes 7-9. Destructions (partielle, de l'autre) et Annéantissement. Volonté de détruire même au prix de ses propres intérêts.</p>
+                    </div>
                 </div>`
             },
             {
@@ -140,10 +149,10 @@ window.learnModules = {
                 icon: "bookmark",
                 content: `
                 <div class="learn-retenir">
-                    <div class="lr-item"><span class="lr-num">1</span><span>Les conflits ont <strong>4 types</strong> : interpersonnels, de valeurs, d'intérêts/objectifs, et sociaux.</span></div>
-                    <div class="lr-item"><span class="lr-num">2</span><span><strong>Thomas & Kilmann</strong> : 5 styles — Compétition / Collaboration / Compromis / Évitement / Accommodement.</span></div>
-                    <div class="lr-item"><span class="lr-num">3</span><span>La <strong>Collaboration</strong> est le style optimal sur le long terme (win-win), mais elle nécessite du temps.</span></div>
-                    <div class="lr-item"><span class="lr-num">4</span><span>Un conflit non géré se résout rarement seul — il s'envenime.</span></div>
+                    <div class="lr-item"><span class="lr-num">1</span><span><strong>Thomas & Kilmann</strong> : 5 styles basés sur l'Assertivité et la Coopération.</span></div>
+                    <div class="lr-item"><span class="lr-num">2</span><span><strong>Glasl</strong> : 9 étapes d'escalade. Phase 1 (Win-Win), Phase 2 (Win-Lose), Phase 3 (Lose-Lose).</span></div>
+                    <div class="lr-item"><span class="lr-num">3</span><span>Plus on descend l'escalier de Glasl, plus il faut l'aide d'un tiers (médiateur, juge).</span></div>
+                    <div class="lr-item"><span class="lr-num">4</span><span>La <strong>collaboration</strong> est le seul style qui vise vraiment la résolution durable par le haut.</span></div>
                 </div>`
             }
         ]
