@@ -156,6 +156,42 @@ window.allCards = [
 
     // ─── MODULE 4 — Outils de communication & médiation ───
     {
+        id: "m4-v1",
+        module: 4,
+        moduleLabel: "Module 4 — Outils de communication",
+        type: "Concept",
+        question: "Quelle distinction le cours fait-il sur la violence en communication ?",
+        answer: "La distinction entre violences visibles (extériorisées) et invisibles (intériorisées).",
+        detail: "Cette distinction permet de reconnaître des formes de violence moins évidentes mais tout aussi dégradantes pour les relations."
+    },
+    {
+        id: "m4-v2",
+        module: 4,
+        moduleLabel: "Module 4 — Outils de communication",
+        type: "Définition",
+        question: "Qu'est-ce qu'une violence visible (extériorisée) ?",
+        answer: "Critiques, jugements et reproches qui dégradent les relations.",
+        detail: "Elles sont facilement identifiables car elles s'expriment ouvertement contre l'autre."
+    },
+    {
+        id: "m4-v3",
+        module: 4,
+        moduleLabel: "Module 4 — Outils de communication",
+        type: "Définition",
+        question: "Qu'est-ce qu'une violence invisible (intériorisée) ?",
+        answer: "Silence, répression d'émotions et retrait social.",
+        detail: "Moins spectaculaires, elles sont pourtant une forme de violence qui bloque la communication et la résolution de problèmes."
+    },
+    {
+        id: "m4-v4",
+        module: 4,
+        moduleLabel: "Module 4 — Outils de communication",
+        type: "Concept",
+        question: "Quelle est l'origine sociale et éducative de ces comportements violents ?",
+        answer: "Des comportements appris valorisant la performance au détriment de l'expression authentique.",
+        detail: "L'éducation nous apprend souvent à cacher nos émotions 'vraies' pour paraître performants, ce qui mène à ces formes de violence."
+    },
+    {
         id: "m4-1",
         module: 4,
         moduleLabel: "Module 4 — Outils de communication",
@@ -192,6 +228,42 @@ window.allCards = [
         detail: "La demande est différente de l'exigence : elle laisse à l'autre le choix de dire non. Exemple : « Pourrais-tu poser ton téléphone pendant nos réunions ? »"
     },
     {
+        id: "m4-v5",
+        module: 4,
+        moduleLabel: "Module 4 — Outils de communication",
+        type: "Symbolisme",
+        question: "Que symbolisent le Chacal et la Girafe en CNV ?",
+        answer: "Chacal = jugement/agressivité. Girafe = empathie/hauteur.",
+        detail: "La girafe a un grand cœur et voit loin grâce à son long cou. Le chacal reste au sol, dans les petits reproches et la défense."
+    },
+    {
+        id: "m4-v6",
+        module: 4,
+        moduleLabel: "Module 4 — Outils de communication",
+        type: "Concept",
+        question: "Qu'est-ce que l'auto-empathie du manager ?",
+        answer: "Prendre le temps d'identifier ses propres émotions/besoins avant d'agir.",
+        detail: "C'est une étape cruciale pour ne pas réagir de façon impulsive et rester dans une posture 'Girafe' face à l'autre."
+    },
+    {
+        id: "m4-v7",
+        module: 4,
+        moduleLabel: "Module 4 — Outils de communication",
+        type: "Méthode",
+        question: "Pourquoi dire « Je me sens trahi » n'est pas une émotion en CNV ?",
+        answer: "C'est un jugement déguisé sur l'intention de l'autre.",
+        detail: "Un vrai sentiment décrit mon état interne sans impliquer l'autre (ex: Je me sens triste, déçu, inquiet). 'Trahi' suppose que l'autre est un traître."
+    },
+    {
+        id: "m4-v8",
+        module: 4,
+        moduleLabel: "Module 4 — Outils de communication",
+        type: "Flash",
+        question: "La CNV consiste-t-elle à 'être gentil' avec tout le monde ?",
+        answer: "Non — elle consiste à être AUTHENTIQUE et LUCIDE.",
+        detail: "On ne cache pas son désaccord, on l'exprime par les besoins pour trouver une solution durable plutôt que d'entrer en conflit."
+    },
+    {
         id: "m4-5",
         module: 4,
         moduleLabel: "Module 4 — Outils de communication",
@@ -201,22 +273,85 @@ window.allCards = [
         detail: "Ancienne manager chez Google et Apple, Kim Scott publie 'Radical Candor' en 2017. Elle y décrit comment donner un feedback sincère tout en se souciant genuinement de l'autre."
     },
     {
-        id: "m4-6",
+        id: "m4-5",
         module: 4,
         moduleLabel: "Module 4 — Outils de communication",
         type: "Concept",
         question: "Quels sont les 2 axes du Radical Candor ?",
-        answer: "Caring Personally (se soucier de la personne) + Challenging Directly (oser remettre en question).",
-        detail: "Le Radical Candor se situe en haut à droite de la matrice. Sans caring : Obnoxious Aggression. Sans challenging : Ruinous Empathy. Sans les deux : Manipulative Insincerity."
+        answer: "Se soucier de la personne (Caring Personally) & Challenger directement (Challenging Directly).",
+        detail: "La 'Sincérité Bienveillante' se situe au croisement de ces deux axes. Sans l'un des deux, le feedback devient toxique ou inefficace."
+    },
+    {
+        id: "m4-6",
+        module: 4,
+        moduleLabel: "Module 4 — Outils de communication",
+        type: "Terminologie",
+        question: "Dans le modèle de Kim Scott, quel quadrant est l'idéal à atteindre ?",
+        answer: "Le Radical Candor.",
+        detail: "C'est le seul quadrant qui permet une progression réelle par la franchise tout en préservant le lien humain."
     },
     {
         id: "m4-7",
         module: 4,
         moduleLabel: "Module 4 — Outils de communication",
         type: "Concept",
-        question: "Comment s'appelle le quadrant du Radical Candor où l'on est gentil mais jamais honnête ?",
-        answer: "Ruinous Empathy (Empathie dévastatrice)",
-        detail: "On veut ménager les sentiments de l'autre, donc on ne dit jamais la vérité. Résultat : les problèmes s'accumulent et la personne ne peut pas progresser."
+        question: "Comment s'appelle le quadrant où l'on est gentil mais pas honnête ?",
+        answer: "L'Empathie Toxique.",
+        detail: "On veut ménager les sentiments de l'interlocuteur, donc on ne fait pas de diagnostic franc. Résultat : la personne stagne et répète ses erreurs."
+    },
+    {
+        id: "m4-v9",
+        module: 4,
+        moduleLabel: "Module 4 — Outils de communication",
+        type: "Concept",
+        question: "Décris l'Agressivité contre-productive.",
+        answer: "Challenger directement sans se soucier de l'autre (0 empathie).",
+        detail: "Le feedback est peut-être vrai, mais il est exprimé sans tact. Cela blesse l'interlocuteur, l'humilie et le braque (mise sur la défensive)."
+    },
+    {
+        id: "m4-v10",
+        module: 4,
+        moduleLabel: "Module 4 — Outils de communication",
+        type: "Concept",
+        question: "Qu'est-ce que l'Hypocrisie manipulatrice ?",
+        answer: "Ni soin personnel, ni challenge direct.",
+        detail: "On ne dit pas la vérité et on ne se soucie pas de l'autre. C'est souvent du silence calculé ou de la flatterie hypocrite qui détruit la confiance."
+    },
+    {
+        id: "m4-v11",
+        module: 4,
+        moduleLabel: "Module 4 — Outils de communication",
+        type: "Evolution",
+        question: "Comment s'appelle le triangle 'positif' qui permet de sortir du triangle de Karpman ?",
+        answer: "Le Triangle Évolutif.",
+        detail: "Au lieu d'être dans le 'Drame', on passe dans une posture de 'Croissance' et de responsabilisation."
+    },
+    {
+        id: "m4-v12",
+        module: 4,
+        moduleLabel: "Module 4 — Outils de communication",
+        type: "Transition",
+        question: "En quel rôle évolue le Persécuteur dans le triangle évolutif ?",
+        answer: "Le Challengeur (ou Confronteur).",
+        detail: "Il pose des limites et incite au changement sans toutefois dévaloriser ou attaquer l'autre."
+    },
+    {
+        id: "m4-v13",
+        module: 4,
+        moduleLabel: "Module 4 — Outils de communication",
+        type: "Transition",
+        question: "En quel rôle évolue le Sauveteur dans le triangle évolutif ?",
+        answer: "Le Coach (ou Aidant).",
+        detail: "Il soutient sans faire à la place. Il attend une demande et aide l'autre à trouver ses propres solutions."
+    },
+    {
+        id: "m4-v14",
+        module: 4,
+        moduleLabel: "Module 4 — Outils de communication",
+        type: "Transition",
+        question: "En quel rôle évolue la Victime dans le triangle évolutif ?",
+        answer: "Le Créateur (ou Responsable).",
+        detail: "Elle reprend son pouvoir d'action et cesse d'attendre une solution de l'extérieur pour devenir actrice de sa vie."
     },
     {
         id: "m4-8",
@@ -292,70 +427,132 @@ window.allCards = [
         answer: "FAUX — il faut commencer par mobiliser les Alliés.",
         detail: "Tenter de convaincre les opposants en premier est épuisant et souvent contre-productif. Mieux vaut créer une dynamique positive à partir des alliés."
     },
+    {
+        id: "m5-5",
+        module: 5,
+        moduleLabel: "Module 5 — Accompagnement au changement",
+        type: "Strategie",
+        question: "Quelle population est la 'cible prioritaire' du changement selon la stratégie des alliés ?",
+        answer: "Les Hésitants.",
+        detail: "C'est la majorité silencieuse (env. 60-80%). En mobilisant les alliés et en rendant les succès visibles, on les fait basculer pour entraîner le reste de l'organisation."
+    },
+    {
+        id: "m5-6",
+        module: 5,
+        moduleLabel: "Module 5 — Accompagnement au changement",
+        type: "Action",
+        question: "Quelle est la stratégie à adopter avec les 'Irréductibles' ?",
+        answer: "Les isoler et ne pas dépenser d'énergie pour les convaincre.",
+        detail: "L'énergie doit être focalisée sur les Alliés et les Hésitants. Les Irréductibles finiront par s'adapter ou partir quand le changement sera devenu la norme globale."
+    },
+    {
+        id: "m5-7",
+        module: 5,
+        moduleLabel: "Module 5 — Accompagnement au changement",
+        type: "Action",
+        question: "Comment utiliser les 'Alliés' dans le déploiement du changement ?",
+        answer: "Comme des ambassadeurs et relais de confiance.",
+        detail: "Il faut les mobiliser en priorité, leur donner des moyens et de la reconnaissance pour qu'ils créent une dynamique positive contagieuse."
+    },
+    {
+        id: "m5-8",
+        module: 5,
+        moduleLabel: "Module 5 — Accompagnement au changement",
+        type: "Sociodynamique",
+        question: "Qui est l'auteur de la 'Stratégie des Alliés' ?",
+        answer: "Jean-Christian Fauvet (Sociodynamique).",
+        detail: "C'est un modèle français très utilisé en consulting pour piloter les transformations organisationnelles complexes."
+    },
+    {
+        id: "m5-9",
+        module: 5,
+        moduleLabel: "Module 5 — Accompagnement au changement",
+        type: "Flash",
+        question: "Quelle est la 'Règle d'or' de la gestion du changement face aux opposants ?",
+        answer: "On ne convainc pas les opposants par la force, on les rend minoritaires par le mouvement des alliés.",
+        detail: "C'est le principe fondamental de la stratégie d'action au changement. La majorité emportera les opposants (ou les poussera vers la sortie)."
+    },
 
-    // ─── MODULE 6 — Prévention des RPS ───
     {
         id: "m6-1",
         module: 6,
         moduleLabel: "Module 6 — Prévention des RPS",
-        type: "Définition",
-        question: "Que signifie RPS ?",
-        answer: "Risques Psychosociaux",
-        detail: "Les RPS désignent les risques professionnels liés à l'organisation du travail, aux relations interpersonnelles et à l'environnement de travail : stress, burn-out, harcèlement, violences, etc."
+        type: "Concept",
+        question: "Quelles sont les 6 phases de la démarche de prévention des RPS ?",
+        answer: "1. Préparation 2. Pré-diagnostic 3. Diagnostic 4. Synthèse 5. Plan d'action 6. Suivi",
+        detail: "Cette démarche structurée permet d'aller de l'identification des besoins jusqu'à l'évaluation de l'efficacité des actions."
     },
     {
         id: "m6-2",
         module: 6,
         moduleLabel: "Module 6 — Prévention des RPS",
-        type: "Liste",
-        question: "Quels sont les 3 niveaux de prévention des RPS ?",
-        answer: "Primaire — Secondaire — Tertiaire",
-        detail: "Primaire : agir sur la source (organisation du travail). Secondaire : aider les individus exposés (formations, soutien). Tertiaire : soutenir en cas de crise (cellule psychologique, accompagnement)."
+        type: "Acteurs",
+        question: "Citez 3 acteurs de l'approche multidisciplinaire des RPS.",
+        answer: "RH, Médecin du travail, CSE (élus) et Psychologue du travail.",
+        detail: "La prévention des RPS ne peut être gérée par un seul service. Elle nécessite une vision globale (médicale, sociale et organisationnelle)."
     },
     {
         id: "m6-3",
         module: 6,
         moduleLabel: "Module 6 — Prévention des RPS",
-        type: "Concept",
-        question: "Quelle est la différence entre prévention primaire et tertiaire ?",
-        answer: "Primaire = agir sur la cause. Tertiaire = traiter les conséquences.",
-        detail: "La prévention primaire supprime ou réduit le risque à la source (ex : réorganiser le travail). La tertiaire intervient après que le dommage est survenu (ex : soutien psychologique post-crise)."
+        type: "Méthode",
+        question: "À quoi sert le questionnaire de 'Karasek' ?",
+        answer: "À évaluer la charge mentale (Demande psychologique) et l'autonomie (Latitude décisionnelle).",
+        detail: "C'est un indicateur direct de diagnostic utilisé en phase 3 pour mesurer le stress ressenti par les salariés."
     },
     {
         id: "m6-4",
         module: 6,
         moduleLabel: "Module 6 — Prévention des RPS",
-        type: "Méthode",
-        question: "Quelles sont les 5 étapes d'un plan de prévention des RPS ?",
-        answer: "1. Préparation  2. Diagnostic  3. Analyse  4. Plan d'action  5. Suivi & évaluation",
-        detail: "Cette démarche structurée permet à l'entreprise d'identifier ses facteurs de risque, de les hiérarchiser et de mettre en place des actions correctives mesurables."
+        type: "Outil",
+        question: "Donnez un exemple d'indicateur 'Indirect' des RPS.",
+        answer: "Le taux d'absentéisme ou le turn-over fréquent.",
+        detail: "On les analyse en phase 2 (Pré-diagnostic) car ils sont le symptôme d'un mal-être déjà installé."
     },
     {
         id: "m6-5",
         module: 6,
         moduleLabel: "Module 6 — Prévention des RPS",
-        type: "Définition",
-        question: "Que signifie DUERP ?",
-        answer: "Document Unique d'Évaluation des Risques Professionnels",
-        detail: "Le DUERP est obligatoire pour toutes les entreprises dès 1 salarié (Code du travail, art. R.4121-1). Il répertorie l'ensemble des risques professionnels, y compris les RPS."
+        type: "Légal",
+        question: "Où doivent obligatoirement être consignés les résultats de l'évaluation des RPS ?",
+        answer: "Dans le DUERP (Document Unique d'Évaluation des Risques Professionnels).",
+        detail: "C'est une obligation légale pour l'employeur (Art. R.4121-1). Le DUERP doit être mis à jour au moins une fois par an."
     },
     {
         id: "m6-6",
         module: 6,
         moduleLabel: "Module 6 — Prévention des RPS",
-        type: "Flash",
-        question: "Est-il obligatoire d'intégrer les RPS dans le DUERP ?",
-        answer: "OUI — c'est une obligation légale.",
-        detail: "Depuis 2002, le DUERP doit recenser tous les risques professionnels. Les RPS en font partie. L'absence du DUERP expose l'employeur à des sanctions pénales."
+        type: "Prévention",
+        question: "Quelle est la différence entre prévention primaire et tertiaire ?",
+        answer: "Primaire = Agir sur la source (organisation). Tertiaire = Soutenir les victimes (crise).",
+        detail: "La prévention primaire est la plus efficace car elle supprime le risque à la racine."
     },
     {
         id: "m6-7",
         module: 6,
         moduleLabel: "Module 6 — Prévention des RPS",
-        type: "Auteur",
-        question: "Quelles sont les deux références institutionnelles citées dans le cours pour la prévention des RPS ?",
-        answer: "INRS (guide ED6140) et AMELI (guide T7)",
-        detail: "L'INRS (Institut National de Recherche et Sécurité) et l'Assurance Maladie (AMELI) publient des guides méthodologiques pour aider les entreprises à prévenir les RPS."
+        type: "Modèle",
+        question: "Que propose le référentiel de l'INRS (ED6140) ?",
+        answer: "Il propose d'analyser les RPS à travers 7 familles de risques.",
+        detail: "Cela inclut des facteurs comme l'intensité du travail et le manque de reconnaissance."
+    },
+    {
+        id: "m6-8",
+        module: 6,
+        moduleLabel: "Module 6 — Prévention des RPS",
+        type: "Modèle",
+        question: "Sur quoi se base le modèle C2R de l'ANACT ?",
+        answer: "Sur l'équilibre entre Contraintes, Ressources et Régulations.",
+        detail: "Il souligne l'importance du contexte socio-économique et des relations professionnelles dans la santé au travail."
+    },
+    {
+        id: "m6-9",
+        module: 6,
+        moduleLabel: "Module 6 — Prévention des RPS",
+        type: "Principe",
+        question: "Pourquoi dit-on que le travail est un 'levier de santé' ?",
+        answer: "Parce qu'un travail bien organisé peut améliorer la santé et la performance.",
+        detail: "Cela passe par la coopération, le sens donné au travail et les marges de manœuvre accordées au salarié."
     },
 
     // ─── AJOUTS MODULE 2 — Glasl & Thomas-Kilmann ───
